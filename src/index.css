@@ -1,0 +1,10 @@
+* {
+    --text: #fff;
+    --link-hover-color: #4babfa;
+    --font: 'Roboto';
+}
+
+body {
+    margin: 0;
+    font-family: var(--font), system-ui, sans-serif;
+}
