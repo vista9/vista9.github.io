@@ -1,5 +1,8 @@
+import {useState} from "react";
 import {toast} from 'sonner';
 import './App.css';
+
+import BackgroundVideo from './components/BackgroundVideo';
 
 const fingerprint = "1C61D769C165F895A4E982D7BE79F6B0383F9F23";
 
@@ -11,8 +14,11 @@ function copyPGP() {
 }
 
 function App() {
+    const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+
     return (
         <>
+            {isVideoPlaying ? <BackgroundVideo/> : (<></>)}
             <div className="container page-center">
                 <div className="about">
                     <div className="author">
@@ -30,7 +36,7 @@ function App() {
                     <p>PGP:</p>
                     <ul>
                         <li>
-                            <span className="clickable hover-color" onClick={copyPGP}>
+                            <span className="clickable non-selectable hover-color" onClick={copyPGP}>
                                 [fingerprint]
                             </span>
                         </li>
@@ -39,6 +45,20 @@ function App() {
                                 [download .asc]
                             </a>
                         </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <iframe className="music"
+                                    src="https://bandcamp.com/EmbeddedPlayer/album=2080760392/size=small/bgcol=333333/linkcol=0f91ff/artwork=none/track=4171053757/transparent=true/"
+                                    seamless></iframe>
+                        </li>
+                        <li>
+                            <span className="clickable non-selectable hover-color"
+                                  onClick={() => setIsVideoPlaying(!isVideoPlaying)}>
+                                [{isVideoPlaying ? "pause" : "play"} background]
+                            </span>
+                        </li>
+                        <li>music & bg from: Machine Party</li>
                     </ul>
                 </div>
                 <div className="buttons">

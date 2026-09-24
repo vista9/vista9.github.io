@@ -2,6 +2,12 @@
     --transition-time: 0.25s;
 }
 
+iframe.music {
+    border: 0;
+    width: 100%;
+    height: 42px;
+}
+
 div.container {
     display: flex;
     flex-direction: column;
@@ -12,6 +18,7 @@ div.container {
 }
 
 div.container.page-center {
+    background-color: rgba(0, 0, 0, 0.5);
     min-height: 100vh;
 }
 
@@ -48,6 +55,7 @@ a {
     color: var(--text);
     transition: var(--transition-time);
     text-decoration: none;
+    user-select: none;
 }
 
 a::after {
@@ -63,6 +71,10 @@ a:focus {
 
 .clickable {
     cursor: pointer;
+}
+
+.non-selectable {
+    user-select: none;
 }
 
 .hover-color {
