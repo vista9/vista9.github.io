@@ -41,11 +41,9 @@ function App() {
                         </li>
                     </ul>
                 </div>
-                <div className="guestbook">
-                    <div className="form">
-                        <form></form>
-                    </div>
-                    <div className="messages"></div>
+                <div className="buttons">
+                    <img src="/web-buttons/made-on-mac.gif" alt="made-on-mac"/>
+                    <img src="/web-buttons/tailscale.png" alt="i-use-tailscale-network"/>
                 </div>
             </div>
         </>
